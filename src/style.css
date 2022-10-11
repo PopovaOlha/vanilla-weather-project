@@ -1,3 +1,193 @@
-h1{
-    color:red;
+@import url("https://fonts.googleapis.com/css?family=Lato|Raleway");
+
+body {
+  background: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  font-family: "Lato";
+  font-weight: 300;
+  font-size: 16px;
+  color: #555;
+}
+.box-first {
+  display: block;
+  margin: 0 auto;
+  color: #f6f6f6;
+  background: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/045/932/original/lukasz-lada-LtWFFVi1RXQ-unsplash.jpg?1662814633);
+  background-size: 102%;
+  text-align: center;
+  width: 600px;
+  height: 25em;
+  border: 1px solid;
+  border-radius: 24px 24px;
+  margin-top: 80px;
+  margin-left: 16em;
+  padding: 10px;
+  opacity: 1;
+}
+.box-second {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  color: #f6f6f6;
+  background: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/045/932/original/lukasz-lada-LtWFFVi1RXQ-unsplash.jpg?1662814633);
+  background-size: 102%;
+  opacity: 0.8;
+  width: 600px;
+  height: 12em;
+  border: 1px solid;
+  border-radius: 24px 24px;
+  margin-top: -4px;
+  margin-left: 20.6em;
+  padding: 20px;
+}
+select {
+  margin-top: 2px;
+  background-color: #f6f6f6;
+}
+.searching {
+  padding-bottom: 3px;
+  margin-top: 10px;
+  margin-left: 170px;
+  background-color: #f6f6f6;
+  border-radius: 5px;
+  color: #2b4353;
+  border: 1px solid #2b4353;
+}
+.search:hover {
+  color: #f6f6f6;
+  background-color: #2b4353;
+}
+.search {
+  padding-bottom: 3px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f6f6f6;
+  border: 1px solid #2b4353;
+}
+
+button:hover {
+  color: #f6f6f6;
+  background-color: #2b4353;
+}
+button {
+  padding-bottom: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f6f6f6;
+  border: 1px solid #2b4353;
+}
+.fahrenheit:hover {
+  color: #f6f6f6;
+  background-color: #2b4353;
+}
+.fahrenheit {
+  border-radius: 5px;
+  padding-top: 3px;
+  padding-bottom: 4px;
+  border: 1px solid #2b4353;
+}
+.celsius:hover {
+  color: #f6f6f6;
+  background-color: #2b4353;
+}
+.celsius {
+  border-radius: 5px;
+  padding-top: 3px;
+  padding-bottom: 4px;
+  border: 1px solid #2b4353;
+}
+
+h1 {
+  color: #f6f6f6;
+  font-family: "Raleway";
+  font-size: 40px;
+  text-align: left;
+  margin-left: 25px;
+  margin-top: 30px;
+}
+
+.data {
+  color: #f6f6f6;
+  text-align: left;
+  font-size: small;
+  margin-left: 12em;
+  word-spacing: 5px;
+}
+.for {
+  text-align: left;
+  font-size: 80px;
+  margin-top: 70px;
+  margin-left: 25px;
+  -webkit-text-stroke: 2px #2b4353;
+}
+.sun {
+  display: block;
+  font-size: 150px;
+  margin-top: -170px;
+  margin-left: 260px;
+  color: #f6f6f6;
+  -webkit-text-stroke: 2px #2b4353;
+}
+hr {
+  border: none;
+  background-color: #f6f6f6;
+  color: red;
+  height: 2px;
+  width: 35em;
+  margin-left: 22em;
+  margin-top: 23px;
+}
+.col-auto {
+  color: #f6f6f6;
+  font-family: "Lato";
+  text-decoration: underline;
+  background: linear-gradient(
+    177.9deg,
+    rgb(58, 62, 88) 3.6%,
+    rgb(119, 127, 148) 105.8%
+  );
+  position: relative;
+  left: 20.6em;
+  top: -10em;
+  width: 80px;
+  border: 1px solid;
+  border-radius: 15px 15px;
+  transition: all 0.2s ease-in-out;
+  padding: 20px 20px;
+  padding-bottom: 5px;
+}
+.col-auto:hover {
+  transform: scale(1.1);
+}
+.indicators{
+  display:flex;
+}
+ul {
+  list-style: none;
+  text-align: center;
+  margin-top: 1px;
+  margin-bottom: -20px;
+  margin-left:24.1em;
+}
+li {
+  color: #f6f6f6;
+  display: inline;
+  margin: 10px 10px;
+  word-spacing: 25px;
+}
+.degrees {
+  text-decoration: underline;
+  font-weight: bold;
+}
+span {
+  font-weight: bold;
+}
+.icon {
+  font-size: 25px;
+}
+.source {
+  font-size: 14px;
+  color: #f6f6f6;
+  text-align: left;
+  margin-top: -130px;
+  margin-left: 18.3em;
 }
