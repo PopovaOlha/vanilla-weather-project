@@ -113,17 +113,17 @@ h1 {
   word-spacing: 5px;
 }
 .for {
-  text-align: left;
+  position: relative;
   font-size: 80px;
-  margin-top: 70px;
-  margin-left: 25px;
+  margin-top: 90px;
+  margin-left:-4.5em;
   -webkit-text-stroke: 2px #2b4353;
 }
-.sun {
-  display: block;
+.sunny {
+  position: relative;
   font-size: 150px;
-  margin-top: -170px;
-  margin-left: 260px;
+  margin-top:-225px;
+  margin-left: 4em;
   color: #f6f6f6;
   -webkit-text-stroke: 2px #2b4353;
 }
