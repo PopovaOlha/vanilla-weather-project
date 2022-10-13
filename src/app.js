@@ -40,7 +40,6 @@ function formatDate(timestamp) {
 
 
   function displayTemperature(response){
-    console.log(response.data);
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
   let feelslikeElement = document.querySelector("#feels-like");
@@ -55,8 +54,10 @@ function formatDate(timestamp) {
   let feelsLike = Math.round(response.data.main.feels_like);
   let wind = response.data.wind.speed;
   let humidity = response.data.main.humidity;
+  let celsiusSign = `°c`;
+  let signCelsius = celsiusSign.sup();
   cityElement.innerHTML = `${city}`;
-  temperatureElement.innerHTML= `${temperature}°c`;
+  temperatureElement.innerHTML= `${temperature}${signCelsius}`;
   feelslikeElement.innerHTML = `FEELSLIKE:${feelsLike}°`;
   windElement.innerHTML = `WIND:${wind}m/s`;
   humidityElement.innerHTML = `HUMDITY:${humidity}%`; 
@@ -64,10 +65,27 @@ function formatDate(timestamp) {
   iconElement.setAttribute("src" , `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   }
 
-let city =`Odessa`;
-let apiKey = "17ad6e67aa629189f73b053634668b20";
-let urlApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-axios.get(urlApi).then(displayTemperature);
+function search(city) {
+  let apiKey = "17ad6e67aa629189f73b053634668b20";
+  let urlApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(urlApi).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityWath = document.querySelector("#search-text");
+    search(cityWath.value);
+  }
+
+  let form = document.querySelector("#form");
+  form.addEventListener("submit", handleSubmit);
+  
+
+
+
+
+
+
 
 function showDegreesCelsius(event) {
     event.preventDefault();

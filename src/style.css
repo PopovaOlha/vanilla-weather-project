@@ -50,11 +50,12 @@ select {
   background-color:#d9dad7 ;
   border-radius: 5px;
   color: #3e4a61;
-  border: 1px solid #3e4a61;
+  border: 2px solid #3e4a61;
 }
 .search:hover {
   color:#3e4a61;
   background-color: #d9dad7;
+  border: 1px solid #3e4a61;
 }
 .search {
   padding-bottom: 3px;
@@ -68,6 +69,8 @@ select {
 button:hover {
   color: #3e4a61;
   background-color:#d9dad7 ;
+  border: 1px solid #3e4a61;
+
 }
 button {
   padding-bottom: 2px;
@@ -80,6 +83,7 @@ button {
 .fahrenheit:hover {
   color: #3e4a61;
   background-color:#d9dad7 ;
+  border: 1px solid #3e4a61;
 }
 .fahrenheit {
   background-color: #3e4a61;
@@ -92,6 +96,7 @@ button {
 .celsius:hover {
   color:#3e4a61 ;
   background-color:#d9dad7;
+  border: 1px solid #3e4a61;
 }
 .celsius {
   background-color: #3e4a61;
@@ -103,14 +108,14 @@ button {
 }
 
 h1 {
-  color: #f6f6f6;
   font-family: "Raleway";
-  font-size: 40px;
+  font-size: 45px;
   text-align: left;
   margin-left: 25px;
   margin-top: 30px;
+  color: #fff;
+ 
 }
-
 .data {
   color: #f6f6f6;
   text-align: left;
@@ -128,7 +133,7 @@ h1 {
 .sunny {
   position: relative;
   font-size: 150px;
-  margin-top:-230px;
+  margin-top:-225px;
   margin-left: 4.3em;
   color: #f6f6f6;
   
