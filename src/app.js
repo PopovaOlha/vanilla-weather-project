@@ -30,7 +30,7 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let seconds = data.getMinutes();
+  let seconds = data.getSeconds();
   if (seconds < 10) {
     seconds = `0${seconds}`;
   }
@@ -40,12 +40,16 @@ function formatDate(timestamp) {
 
 
   function displayTemperature(response){
+    console.log(response.data);
   let cityElement = document.querySelector("#city");
   let temperatureElement = document.querySelector("#temperature");
   let feelslikeElement = document.querySelector("#feels-like");
   let windElement = document.querySelector("#weend-element");
   let humidityElement = document.querySelector("#humidity-element");
-  let dateElement= document.querySelector("#data-type");
+  let dateElement = document.querySelector("#data-type");
+  let iconElement = document.querySelector("#icon");
+
+
   let city = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   let feelsLike = Math.round(response.data.main.feels_like);
@@ -57,10 +61,10 @@ function formatDate(timestamp) {
   windElement.innerHTML = `WIND:${wind}m/s`;
   humidityElement.innerHTML = `HUMDITY:${humidity}%`; 
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute("src" , `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  }
 
-}
-
-let city =`New York`;
+let city =`Odessa`;
 let apiKey = "17ad6e67aa629189f73b053634668b20";
 let urlApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(urlApi).then(displayTemperature);
