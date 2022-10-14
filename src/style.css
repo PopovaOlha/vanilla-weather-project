@@ -92,6 +92,7 @@ button {
   padding-top: 3px;
   padding-bottom: 4px;
   border: 1px solid #d9dad7;
+  cursor: pointer;
 }
 .celsius:hover {
   color:#3e4a61 ;
@@ -105,6 +106,7 @@ button {
   padding-top: 3px;
   padding-bottom: 4px;
   border: 1px solid #d9dad7;
+  cursor: pointer;
 }
 
 h1 {
