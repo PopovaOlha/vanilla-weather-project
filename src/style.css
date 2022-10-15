@@ -56,6 +56,7 @@ select {
   color:#3e4a61;
   background-color: #d9dad7;
   border: 1px solid #3e4a61;
+  transition: 0.3s;
 }
 .search {
   padding: 1px 6px 3px;
@@ -70,7 +71,7 @@ button:hover {
   color: #3e4a61;
   background-color:#d9dad7 ;
   border: 1px solid #3e4a61;
-
+  transition: 0.3s;
 }
 button {
   padding-bottom: 2px;
@@ -84,6 +85,7 @@ button {
   color: #3e4a61;
   background-color:#d9dad7 ;
   border: 1px solid #3e4a61;
+  transition: 0.3s;
 }
 .fahrenheit {
   background-color: #3e4a61;
@@ -98,6 +100,7 @@ button {
   color:#3e4a61 ;
   background-color:#d9dad7;
   border: 1px solid #3e4a61;
+  transition: 0.3s;
 }
 .celsius {
   background-color: #3e4a61;
