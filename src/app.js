@@ -42,6 +42,7 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityWath = document.querySelector("#search-text");
   search(cityWath.value);
+  cityWath.value = "";
 }
 
 let form = document.querySelector("#form");
@@ -63,7 +64,6 @@ function displayTemperature(response){
   let iconElement = document.querySelector("#icon");
  
   celsiusTemperature = response.data.main.temp;
-
   let city = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   let feelsLike = Math.round(response.data.main.feels_like);
@@ -97,7 +97,9 @@ locationDot.addEventListener("click", getCurrentPosition);
 function showDegreesCelsius(event) {
     event.preventDefault();
     let h2 = document.querySelector("h2");
-    h2.innerHTML = `${Math.round(celsiusTemperature)}°`;
+    let celsiusDegreesSign = `°`;
+    let signCelsiusDegrees = celsiusDegreesSign.sup();
+    h2.innerHTML = `${Math.round(celsiusTemperature)}${signCelsiusDegrees}`;
   }
   
   let celsius = document.querySelector("#celsius");
@@ -107,9 +109,11 @@ function showDegreesCelsius(event) {
     event.preventDefault();
     let fahrengeitTemperature = (celsiusTemperature * 9) / 5 + 32;
     let fahrengeitElement = document.querySelector("h2");
-    fahrengeitElement.innerHTML = `${Math.round(fahrengeitTemperature)}°`;
+    let fahrengeitSign = `°`;
+    let signFahrengeit = fahrengeitSign.sup();
+    fahrengeitElement.innerHTML = `${Math.round(fahrengeitTemperature)}${signFahrengeit}`;
   }
-    let celsiusTemperature = null;
+    
 
   let fahrenheit = document.querySelector("#fahrenheit");
   fahrenheit.addEventListener("click", showDegreesFahrenheit);
