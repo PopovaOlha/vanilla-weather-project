@@ -38,6 +38,31 @@ function formatDate(timestamp) {
   return `${day} ${date}.${month}.${year} ${hour}:${minutes}:${seconds} `;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sut", "Sun"];
+  days.forEach(function(day) {
+    forecastHTML = forecastHTML + `
+    <div class="col-auto ">
+        <div class="weather-days">
+          ${day}
+        </div>
+       <figure class="icon">
+           <img src="http://openweathermap.org/img/wn/04d@2x.png" width="30"/>
+        </figure>
+        <div class="weather-max-temperature">
+        28°
+    </div>
+    <div class="weather-min-temperature">
+        22°
+    </div>
+    `;
+   forecastHTML = forecastHTML + `</div>`;
+   forecastElement.innerHTML = forecastHTML;
+  })
+}
+
 function handleSubmit(event) {
   event.preventDefault();
   let cityWath = document.querySelector("#search-text");
@@ -93,6 +118,7 @@ function getCurrentPosition() {
 let locationDot = document.querySelector("#location-dot");
 locationDot.addEventListener("click", getCurrentPosition);
 
+displayForecast();
 
 function showDegreesCelsius(event) {
     event.preventDefault();
@@ -113,7 +139,7 @@ function showDegreesCelsius(event) {
     let signFahrengeit = fahrengeitSign.sup();
     fahrengeitElement.innerHTML = `${Math.round(fahrengeitTemperature)}${signFahrengeit}`;
   }
-    
+   
 
   let fahrenheit = document.querySelector("#fahrenheit");
   fahrenheit.addEventListener("click", showDegreesFahrenheit);
