@@ -38,8 +38,10 @@ function formatDate(timestamp) {
   return `${day} ${date}.${month}.${year} ${hour}:${minutes}:${seconds} `;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
+ 
   let forecastHTML = `<div class="row">`;
   let days = ["Tue", "Wed", "Thu", "Fri", "Sut", "Sun"];
   days.forEach(function(day) {
@@ -73,11 +75,19 @@ function handleSubmit(event) {
 let form = document.querySelector("#form");
 form.addEventListener("submit", handleSubmit);
 
+
 function search(city) {
   let apiKey = "17ad6e67aa629189f73b053634668b20";
   let urlApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(urlApi).then(displayTemperature);
 }
+
+function getForecast(coordinates) {
+  let apiKey = `17ad6e67aa629189f73b053634668b20`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 
 function displayTemperature(response){
   let cityElement = document.querySelector("#city");
@@ -90,19 +100,22 @@ function displayTemperature(response){
  
   celsiusTemperature = response.data.main.temp;
   let city = response.data.name;
+  let country = response.data.sys.country;
   let temperature = Math.round(response.data.main.temp);
   let feelsLike = Math.round(response.data.main.feels_like);
   let wind = response.data.wind.speed;
   let humidity = response.data.main.humidity;
   let celsiusSign = `°C`;
   let signCelsius = celsiusSign.sup();
-  cityElement.innerHTML = `${city}`;
+  cityElement.innerHTML = `${city}, ${country}`;
   temperatureElement.innerHTML= `${temperature}${signCelsius}`;
   feelslikeElement.innerHTML = `FEELSLIKE:${feelsLike}°`;
   windElement.innerHTML = `WIND:${wind}m/s`;
   humidityElement.innerHTML = `HUMDITY:${humidity}%`; 
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute("src" , `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+ getForecast(response.data.coord);
   }
 
 function showPosition(position) {
