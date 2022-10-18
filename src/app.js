@@ -39,7 +39,6 @@ function formatDate(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
  
   let forecastHTML = `<div class="row">`;
@@ -153,7 +152,6 @@ function showDegreesCelsius(event) {
     fahrengeitElement.innerHTML = `${Math.round(fahrengeitTemperature)}${signFahrengeit}`;
   }
    
-
   let fahrenheit = document.querySelector("#fahrenheit");
   fahrenheit.addEventListener("click", showDegreesFahrenheit);
 
