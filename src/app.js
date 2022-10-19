@@ -59,7 +59,7 @@ function displayForecast(response) {
           ${formatDay(forecastDay.dt)}
         </div>
        <figure class="icon">
-           <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="30"/>
+           <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" width="32"/>
         </figure>
         <div class="weather-max-temperature">
         ${Math.round(forecastDay.temp.max)}°
@@ -68,35 +68,17 @@ function displayForecast(response) {
         ${Math.round(forecastDay.temp.min)}°
     </div>
     `;
+    }
+    forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  });
   }
-   forecastHTML = forecastHTML + `</div>`;
-   forecastElement.innerHTML = forecastHTML;
-  })
-}
-
-function handleSubmit(event) {
-  event.preventDefault();
-  let cityWath = document.querySelector("#search-text");
-  search(cityWath.value);
-  cityWath.value = "";
-}
-
-let form = document.querySelector("#form");
-form.addEventListener("submit", handleSubmit);
-
-
-function search(city) {
-  let apiKey = "17ad6e67aa629189f73b053634668b20";
-  let urlApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(urlApi).then(displayTemperature);
-}
-
 function getForecast(coordinates) {
   let apiKey = `17ad6e67aa629189f73b053634668b20`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
-
+search("Odessa");
 
 function displayTemperature(response){
   let cityElement = document.querySelector("#city");
@@ -126,7 +108,50 @@ function displayTemperature(response){
 
  getForecast(response.data.coord);
   }
+  function search(city) {
+    let apiKey = "17ad6e67aa629189f73b053634668b20";
+    let urlApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(urlApi).then(displayTemperature);
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    let cityWath = document.querySelector("#search-text").value;
+    search(cityWath);
+    cityWath.value = "";
+  }
+  
+  let form = document.querySelector("#form");
+  form.addEventListener("submit", handleSubmit);
 
+  function showDegreesCelsius(event) {
+    event.preventDefault();
+    let h2 = document.querySelector("h2");
+    celsius.classList.add("active");
+    fahrenheit.classList.remove("active");
+    let celsiusDegreesSign = `°`;
+    let signCelsiusDegrees = celsiusDegreesSign.sup();
+    h2.innerHTML = `${Math.round(celsiusTemperature)}${signCelsiusDegrees}`;
+   }
+  
+ function showDegreesFahrenheit(event) {
+    event.preventDefault();
+    let fahrengeitElement = document.querySelector("h2");
+    celsius.classList.remove("active");
+    fahrenheit.classList.add("active");
+    
+    let fahrengeitTemperature = (celsiusTemperature * 9) / 5 + 32;
+    let fahrengeitSign = `°`;
+    let signFahrengeit = fahrengeitSign.sup();
+    fahrengeitElement.innerHTML = `${Math.round(fahrengeitTemperature)}${signFahrengeit}`;
+  }
+
+  let celsius = document.querySelector("#celsius");
+  celsius.addEventListener("click", showDegreesCelsius);
+
+  let fahrenheit = document.querySelector("#fahrenheit");
+  fahrenheit.addEventListener("click", showDegreesFahrenheit);
+
+  
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
@@ -142,27 +167,3 @@ locationDot.addEventListener("click", getCurrentPosition);
 
 displayForecast();
 
-function showDegreesCelsius(event) {
-    event.preventDefault();
-    let h2 = document.querySelector("h2");
-    let celsiusDegreesSign = `°`;
-    let signCelsiusDegrees = celsiusDegreesSign.sup();
-    h2.innerHTML = `${Math.round(celsiusTemperature)}${signCelsiusDegrees}`;
-  }
-  
-  let celsius = document.querySelector("#celsius");
-  celsius.addEventListener("click", showDegreesCelsius);
-  
-  function showDegreesFahrenheit(event) {
-    event.preventDefault();
-    let fahrengeitTemperature = (celsiusTemperature * 9) / 5 + 32;
-    let fahrengeitElement = document.querySelector("h2");
-    let fahrengeitSign = `°`;
-    let signFahrengeit = fahrengeitSign.sup();
-    fahrengeitElement.innerHTML = `${Math.round(fahrengeitTemperature)}${signFahrengeit}`;
-  }
-   
-  let fahrenheit = document.querySelector("#fahrenheit");
-  fahrenheit.addEventListener("click", showDegreesFahrenheit);
-
-  

@@ -24,6 +24,7 @@ body {
   margin-left: 16em;
   padding: 10px;
   opacity: 1;
+ 
 }
 .box-second {
   display: block;
@@ -121,7 +122,6 @@ h1 {
   margin-left: 25px;
   margin-top: 30px;
   color: #fff;
- 
 }
 .data {
   color: #f6f6f6;
@@ -208,6 +208,7 @@ margin-bottom: 25px;
   margin-bottom: 30px;
 }
 .source {
+  position: absolute;
   font-size: 14px;
   color: #f6f6f6;
   text-align: left;
