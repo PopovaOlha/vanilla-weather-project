@@ -126,15 +126,8 @@ h1 {
   margin-top: 30px;
   color: #fff;
 }
-.data {
-  color: #f6f6f6;
-  text-align: left;
-  font-size: small;
-  margin-left: 12em;
-  word-spacing: 5px;
-}
-.for {
-  position: relative;
+h2 {
+  text-align: center;
   font-size: 80px;
   margin-top: 90px;
   margin-left:-4.5em;
@@ -142,12 +135,19 @@ h1 {
 }
 .sunny {
   position: relative;
+  left:4.3em;
   font-size: 150px;
-  margin-top:-225px;
-  margin-left: 4.3em;
   color: #f6f6f6;
-  
+  margin-top:-225px;
 }
+.data {
+  color: #f6f6f6;
+  text-align: left;
+  font-size: small;
+  margin-left: 12em;
+  word-spacing: 5px;
+}
+
 hr {
   border: none;
   background-color: #f6f6f6;
@@ -160,7 +160,7 @@ hr {
 .col-auto {
   color: #f6f6f6;
   font-family: "Lato";
-  text-decoration: underline;
+  text-decoration: none;
   background: linear-gradient(
     177.9deg,
     #3a3e58 3.6%,
@@ -223,5 +223,4 @@ margin-bottom: 25px;
   margin:0 auto;
   margin-top:-10px;
   margin-bottom: 10px;
-  width: 30px;
 }

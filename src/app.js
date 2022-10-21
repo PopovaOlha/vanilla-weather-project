@@ -108,20 +108,21 @@ function displayTemperature(response){
 
  getForecast(response.data.coord);
   }
+  function handleSubmit(event) {
+    event.preventDefault();
+    let cityWath = document.querySelector("#search-text");
+    search(cityWath.value);
+    cityWath.value = "";
+  }
+ 
+  let form = document.querySelector("#form");
+  form.addEventListener("submit", handleSubmit);
+
   function search(city) {
     let apiKey = "17ad6e67aa629189f73b053634668b20";
     let urlApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(urlApi).then(displayTemperature);
   }
-  function handleSubmit(event) {
-    event.preventDefault();
-    let cityWath = document.querySelector("#search-text").value;
-    search(cityWath);
-    cityWath.value = "";
-  }
-  
-  let form = document.querySelector("#form");
-  form.addEventListener("submit", handleSubmit);
 
   function showDegreesCelsius(event) {
     event.preventDefault();
