@@ -196,6 +196,10 @@ li {
   margin: 10px 10px;
   word-spacing: 25px;
 }
+a {
+  color:#f6f6f6;
+  text-decoration: none;
+}
 .degrees:hover {
  
   text-decoration: none;
