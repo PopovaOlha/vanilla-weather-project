@@ -158,7 +158,7 @@ hr {
   margin-top: 23px;
   margin: auto;
 }
-.col-auto {
+.row {
   color: #f6f6f6;
   font-family: "Lato";
   text-decoration: none;
@@ -177,7 +177,7 @@ hr {
   padding: 26px 5px ;
   padding-bottom: 5px;
 }
-.col-auto:hover {
+.row:hover {
   transform: scale(1.1);
 }
 .indicators{
