@@ -5,108 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/80f37aa6d1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="src/style.css">
+    <script src="https://kit.fontawesome.com/80f37aa6d1.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-   <title>Weather-app</title>
+    <title>Weather-app</title>
 </head>
 <body>
-   <div class="container">
-    <div class="box-first">
+<div class="container text-center">
+    <div class="box-first mx-auto">
         <form id="form">
             <button class="button-location" id="location-dot">
-                <i class="fa-solid fa-map-location-dot">
-                </i>
+                <i class="fa-solid fa-map-location-dot"></i>
             </button>
-            <select class="fahrenheit" id="fahrenheit" >
+            <select class="fahrenheit" id="fahrenheit">
                 <option value="°F">°F</option>
             </select>
-            <select class="celsius" id="celsius" >
-                <option value="°C" >
-                    °C
-                </option>
+            <select class="celsius" id="celsius">
+                <option value="°C">°C</option>
             </select>
-            <input type="text" class="searching" placeholder="   Search the city" autocomplete="off" autofocus="on" id="search-text" />
-            <input type="submit" class="search"  value="Search"/>
+            <input type="text" class="searching" placeholder="Search the city" autocomplete="off" autofocus="on" id="search-text" />
+            <input type="submit" class="search" value="Search" />
         </form>
-        <h1 id="city">
-        </h1>
-        <p class="data" id = "data-type">
-        </p>
-        <h2 id="temperature">
-        </h2>
+        <h1 id="city"></h1>
+        <p class="data" id="data-type"></p>
+        <h2 id="temperature"></h2>
     </div>
-   <div class="sunny">
-    <img 
-          src=""
-          id="icon"
-          width="150"
-          />
+    <div class="sunny mx-auto">
+        <img src="" id="icon" width="150" />
     </div>
-</div>
-<div class="indicators">
-    <ul>
-        <li>
-            <a href="a" id= "feels-like">
-                FEELSLIKE:29°
+    <div class="indicators mx-auto">
+        <ul>
+            <li>
+                <a href="a" id="feels-like">FEELSLIKE:29°</a>
+            </li>
+            <li>
+                <a href="a" id="weend-element">WIND:15m/s</a>
+            </li>
+            <li>
+                <a href="a" id="humidity-element">HUMIDITY:75%</a>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div class="box-second mx-auto"></div>
+    <div class="container text-center" id="forecast"></div>
+    <small>
+        <span class="source">
+            Open source code in
+            <a class="btn btn-secondary btn-primary logout" href="https://github.com/PopovaOlha/vanilla-weather-project" class="github" target="_blank">
+                <i class="fa-brands fa-github"></i>
             </a>
-        </li>
-        <li>
-            <a href="a" id="weend-element">
-                WIND:15m/s
-            </a>
-        </li>
-        <li>
-            <a href="a" id="humidity-element">
-                HUMDITY:75%
-            </a>
-        </li>
-    </ul>
-</div>
-<hr>
-<div class="box-second"></div>
-   
-<div class="container text-center" id="forecast"></div> 
-<small>
-    <span class="source ">
-        open source code in
-        <a class="btn btn-secondary btn-primary logout" href="https://github.com/PopovaOlha/vanilla-weather-project" class="github" target="_blank">
-            <i class="fa-brands fa-github">
-            </i>
-        </a>
-        <span class="name">
-            by OlhaPopova
+            <span class="name">by OlhaPopova</span>
         </span>
-    </span>
-</small>
-</div>
-</div>
-</div>
-</div>
+    </small>
 </div>
 <script src="src/app.js"></script>
 </body>
 </html>
-
-
-        
-       
-      
-        
-         
-        
-        
-        
-        
-      
-
-
-
-
-
-            
-        
-        
-   
-  
-    
