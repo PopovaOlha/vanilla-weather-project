@@ -139,6 +139,10 @@ h2 {
   justify-content: center; 
   align-items: center; 
 }
+.icon-block {
+  display: flex;
+  justify-content: space-around;
+}
 .data {
   color: #f6f6f6;
   text-align: left;
