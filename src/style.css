@@ -189,7 +189,8 @@ ul {
   margin-left:24.1em;
 }
 li {
-  text-align: center;
+  align-self: center;
+  margin: auto;
   color: #f6f6f6;
   display: inline;
   margin: 10px 10px;
