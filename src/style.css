@@ -235,5 +235,6 @@ margin-bottom: 25px;
 .forecast {
   display: flex;;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
 }
