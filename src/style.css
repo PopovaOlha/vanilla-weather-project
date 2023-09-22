@@ -232,7 +232,7 @@ margin-bottom: 25px;
   margin-top:-10px;
   margin-bottom: 10px;
 }
-#forecast-container {
+#forecast {
   display: flex;
   justify-content: center;
   align-items: center;
