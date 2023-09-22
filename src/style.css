@@ -14,7 +14,8 @@ body {
 }
 
 .box-first {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   color: #f6f6f6;
   background: url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/045/932/original/lukasz-lada-LtWFFVi1RXQ-unsplash.jpg?1662814633);
@@ -30,7 +31,8 @@ body {
  
 }
 .box-second {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 20px auto;
   text-align: center;
   color: #f6f6f6;
