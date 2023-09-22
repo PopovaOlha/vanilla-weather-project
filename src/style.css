@@ -179,6 +179,7 @@ hr {
 .indicators{
   display:flex;
   margin: 0 auto;
+  justify-content: center;
 }
 ul {
   list-style: none;
